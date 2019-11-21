@@ -1,0 +1,35 @@
+<div class="fondo">
+  <div class = "container">
+    <app-barra-superior></app-barra-superior>
+    <div class="row principal">
+      <div class="row">
+        <div class="col s12 m6 l6">
+            <h4>Edicion de Usuarios</h4>
+        </div>
+      </div>
+      <hr><br><br>
+      <div class = "row">
+        <div class="col s12 m6 offset-m3 l4 offset-l4">
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)" validate>
+            <label>Elija el usuario a editar</label>
+            <select matNativeControl class="browser-default" id="usuarioactivo" (change)="llenarforma($event)" required >
+                <option *ngFor="let item of usuarios" [value]="item.cedula">{{item.cedula}}</option>
+            </select>
+            <br><br>
+            <label>Nombres</label>
+            <input type="text" required [(ngModel)]="usuario.nombre" id="nombre" required #nombre="ngModel" [ngModelOptions]="{standalone: true}">
+            <label>Apellidos</label>
+            <input type="text" required [(ngModel)]="usuario.apellidos" id="apellidos" required #apellidos="ngModel" [ngModelOptions]="{standalone: true}" >
+            <label>Telefono</label>
+            <input type="number" required [(ngModel)]="usuario.telefono" id="telefono" required #telefono="ngModel" [ngModelOptions]="{standalone: true}" >
+            <label>Correo</label>
+            <input type="email" required [(ngModel)]="usuario.correo" id="correo" required #correo="ngModel" [ngModelOptions]="{standalone: true}" ><br><br>
+            <div class="center-align">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Actualizar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

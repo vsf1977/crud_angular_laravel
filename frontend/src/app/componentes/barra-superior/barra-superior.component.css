@@ -1,0 +1,12 @@
+.brand-logo
+{
+  margin-left: 1%;
+}
+
+@media only screen and (max-width: 650px)
+{
+  .brand-logo
+  {
+    font-size: 1em;
+  }
+}
