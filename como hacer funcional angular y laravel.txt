@@ -1,0 +1,2 @@
+para angular se recupera las dependencias con npm install
+para laravel se recuperan las dependencias con composer install, se copia el archivo .env.example y se genera la clave con php artisan key:generate.
